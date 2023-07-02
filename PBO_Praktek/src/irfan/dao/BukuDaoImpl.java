@@ -14,10 +14,7 @@ import java.util.List;
 public class BukuDaoImpl implements BukuDao {
     private List<Buku> data = new ArrayList<>();
 
-    public BukuDaoImpl() {
-        data.add(new Buku("A001","One Piece","Eichiro Oda","Shueisa"));
-        data.add(new Buku("A002","Middle Earth","Eichi","Test"));
-    }
+    public BukuDaoImpl() {}
     
     
     

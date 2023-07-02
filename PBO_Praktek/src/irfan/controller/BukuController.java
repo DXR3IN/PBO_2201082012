@@ -77,8 +77,7 @@ public class BukuController {
         view.getTxtKodeBuku().setText(buku.getKodebuku());
         view.getTxtJudul().setText(buku.getJudul());
         view.getTxtPengarang().setText(buku.getPengarang());
-        view.getTxtPenerbit().setText(buku.getPenerbit());
-        
+        view.getTxtPenerbit().setText(buku.getPenerbit());   
     }
     
     
