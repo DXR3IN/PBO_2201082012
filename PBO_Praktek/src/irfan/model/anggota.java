@@ -17,13 +17,15 @@ public class anggota {
     public anggota() {
     }
     
-    
-    
     public anggota(String kodeAnggota, String namaAnggota, String alamat, String jeniskelamin){
         this.kodeAnggota = kodeAnggota;
         this.namaAnggota = namaAnggota;
         this.alamat = alamat;
         this.jeniskelamin = jeniskelamin;
+    }
+
+    public anggota(String kodeAnggota) {
+        this.kodeAnggota = kodeAnggota;
     }
 
     public String getKodeAnggota() {

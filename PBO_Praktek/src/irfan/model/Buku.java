@@ -23,6 +23,10 @@ public class Buku {
         this.pengarang = pengarang;
         this.penerbit = penerbit;
     }
+
+    public Buku(String kodebuku) {
+        this.kodebuku = kodebuku;
+    }
     
     public String getKodebuku() {
         return kodebuku;
