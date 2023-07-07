@@ -8,6 +8,7 @@ import irfan.model.*;
 import java.util.*;
 import irfan.view.*;
 import irfan.dao.*;
+import java.text.ParseException;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.*;
 /**
@@ -46,7 +47,7 @@ public class PinjamController {
         }
     }
     
-    public void tampil(){
+    public void tampil() throws ParseException{
         DefaultTableModel tabelModel =(DefaultTableModel) view.getTablePinjam().getModel(); 
         tabelModel.setRowCount(0);
         List<Pinjam> list = dao.getAll();

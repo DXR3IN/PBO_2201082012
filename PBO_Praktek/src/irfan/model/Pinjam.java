@@ -4,6 +4,9 @@
  */
 package irfan.model;
 
+import java.text.*;
+import java.util.*;
+
 /**
  *
  * @author mhdir
@@ -57,8 +60,13 @@ public class Pinjam  {
         this.kodeAnggota = kodeAnggota;
     }
     
-    public int getSelisih(){
-       return 1;
+    public long getSelisih() throws ParseException{
+       SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+       Date d1 = format.parse(tglPinjam);
+       Date d2 = format.parse(tglKembali);
+       long diff = d2.getTime() - d1.getTime();
+       long diffDays = diff / (24*60*60*1000);
+       return diffDays;
     }
     
     
