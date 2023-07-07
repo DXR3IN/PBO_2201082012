@@ -13,7 +13,8 @@ public class PinjamDaoImpl implements PinjamDao {
     private List<Pinjam> data = new ArrayList<>();
 
     public PinjamDaoImpl() {
-        
+       data.add(new Pinjam("B001","A002","12-12-2019","14-12-2019"));
+       
     }
     
     public void insert(Pinjam pinjam){

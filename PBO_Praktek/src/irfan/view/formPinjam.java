@@ -140,6 +140,11 @@ public class formPinjam extends javax.swing.JFrame {
                 "Kode Buku", "Kode Anggota", "Tanggal Pinjam", "Tanggal Kembali", "Selisih"
             }
         ));
+        TablePinjam.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TablePinjamMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(TablePinjam);
 
         cboBuku.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -238,6 +243,11 @@ public class formPinjam extends javax.swing.JFrame {
         // TODO add your handling code here:
         controller.clearForm();
     }//GEN-LAST:event_cancelActionPerformed
+
+    private void TablePinjamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablePinjamMouseClicked
+        // TODO add your handling code here:
+        controller.getPinjam();
+    }//GEN-LAST:event_TablePinjamMouseClicked
 
     /**
      * @param args the command line arguments

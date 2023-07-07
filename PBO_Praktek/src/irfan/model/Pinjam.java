@@ -14,7 +14,7 @@ public class Pinjam  {
     private String kodeBuku;
     private String kodeAnggota;
 
-    public Pinjam(String kodeBuku, String kodeAnggota, String tglPinjam, String tglKembali) {
+    public Pinjam(String kodeBuku, String kodeAnggota, String tglKembali, String tglPinjam) {
         this.kodeBuku = kodeBuku;
         this.kodeAnggota = kodeAnggota;
         this.tglPinjam = tglPinjam;
