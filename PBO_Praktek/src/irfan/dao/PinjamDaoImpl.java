@@ -13,6 +13,7 @@ public class PinjamDaoImpl implements PinjamDao {
     private List<Pinjam> data = new ArrayList<>();
 
     public PinjamDaoImpl() {
+        
     }
     
     public void insert(Pinjam pinjam){

@@ -57,6 +57,9 @@ public class Pinjam  {
         this.kodeAnggota = kodeAnggota;
     }
     
+    public int getSelisih(){
+       return 1;
+    }
     
     
     

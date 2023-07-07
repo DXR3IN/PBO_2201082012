@@ -4,6 +4,7 @@
  */
 package irfan.view;
 import irfan.controller.PinjamController;
+import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
@@ -22,18 +23,19 @@ public class formPinjam extends javax.swing.JFrame {
         controller = new PinjamController(this);
         controller.clearForm();
         controller.tampil();
+        controller.isiCombo();
     }
 
     public JTable getTablePinjam() {
         return TablePinjam;
     }
 
-    public JTextField getTxtKodeAnggota() {
-        return TxtKodeAnggota;
+    public JComboBox<String> getCboAnggota() {
+        return cboAnggota;
     }
 
-    public JTextField getTxtKodeBuku() {
-        return TxtKodeBuku;
+    public JComboBox<String> getCboBuku() {
+        return cboBuku;
     }
 
     public JTextField getTxtTglKembali() {
@@ -61,8 +63,6 @@ public class formPinjam extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        TxtKodeBuku = new javax.swing.JTextField();
-        TxtKodeAnggota = new javax.swing.JTextField();
         TxtTglPinjam = new javax.swing.JTextField();
         TxtTglKembali = new javax.swing.JTextField();
         insert = new javax.swing.JButton();
@@ -71,6 +71,8 @@ public class formPinjam extends javax.swing.JFrame {
         cancel = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         TablePinjam = new javax.swing.JTable();
+        cboBuku = new javax.swing.JComboBox<>();
+        cboAnggota = new javax.swing.JComboBox<>();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -94,10 +96,6 @@ public class formPinjam extends javax.swing.JFrame {
         jLabel3.setText("Tanggal Pinjam");
 
         jLabel4.setText("Tanggal Kembali");
-
-        TxtKodeBuku.setText("jTextField1");
-
-        TxtKodeAnggota.setText("jTextField2");
 
         TxtTglPinjam.setText("jTextField3");
 
@@ -133,16 +131,20 @@ public class formPinjam extends javax.swing.JFrame {
 
         TablePinjam.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Kode Buku", "Kode Anggota", "Tanggal Pinjam", "Tanggal Kembali"
+                "Kode Buku", "Kode Anggota", "Tanggal Pinjam", "Tanggal Kembali", "Selisih"
             }
         ));
         jScrollPane2.setViewportView(TablePinjam);
+
+        cboBuku.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        cboAnggota.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -159,11 +161,12 @@ public class formPinjam extends javax.swing.JFrame {
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(TxtKodeBuku)
-                            .addComponent(TxtKodeAnggota)
-                            .addComponent(TxtTglPinjam)
-                            .addComponent(TxtTglKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(TxtTglPinjam)
+                                .addComponent(TxtTglKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cboBuku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cboAnggota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(82, 82, 82)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(insert)
@@ -177,15 +180,15 @@ public class formPinjam extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(11, 11, 11)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(TxtKodeBuku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cboBuku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(TxtKodeAnggota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                            .addComponent(cboAnggota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addComponent(TxtTglPinjam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -273,11 +276,11 @@ public class formPinjam extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TablePinjam;
-    private javax.swing.JTextField TxtKodeAnggota;
-    private javax.swing.JTextField TxtKodeBuku;
     private javax.swing.JTextField TxtTglKembali;
     private javax.swing.JTextField TxtTglPinjam;
     private javax.swing.JButton cancel;
+    private javax.swing.JComboBox<String> cboAnggota;
+    private javax.swing.JComboBox<String> cboBuku;
     private javax.swing.JButton delete;
     private javax.swing.JButton insert;
     private javax.swing.JLabel jLabel1;
